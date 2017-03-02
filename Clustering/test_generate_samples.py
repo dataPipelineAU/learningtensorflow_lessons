@@ -1,7 +1,8 @@
 import tensorflow as tf
 import numpy as np
 
-from functions import create_samples, choose_random_centroids, plot_clusters
+from Clustering.test_functions import create_samples, choose_random_centroids, plot_clusters
+
 
 n_features = 2
 n_clusters = 3
