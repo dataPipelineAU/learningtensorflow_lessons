@@ -9,7 +9,7 @@ fig = plt.figure(figsize=(3, 3))
 
 plt.imshow(digits['images'][66], cmap="gray", interpolation='none')
 
-plt.show()
+#plt.show()
 
 from sklearn import svm
 
