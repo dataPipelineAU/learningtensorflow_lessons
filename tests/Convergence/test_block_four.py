@@ -31,5 +31,5 @@ with tf.Session() as session:
 
 import matplotlib.pyplot as plt
 plt.plot([np.mean(errors[i-50:i]) for i in range(len(errors))])
-plt.show()
-plt.savefig("errors.png")
+#plt.show()
+#plt.savefig("errors.png")

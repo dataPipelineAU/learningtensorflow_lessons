@@ -11,7 +11,7 @@ with tf.Session() as session:
 
 fig = plt.figure()
 plot = plt.imshow(X, cmap='Greys',  interpolation='nearest')
-plt.show()
+#plt.show()
 
 
 def update_board(X):

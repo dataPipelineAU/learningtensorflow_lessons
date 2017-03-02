@@ -32,7 +32,7 @@ def plot_clusters(all_samples, centroids, n_samples_per_cluster):
         # Also plot centroid
         plt.plot(centroid[0], centroid[1], markersize=35, marker="x", color='k', mew=10)
         plt.plot(centroid[0], centroid[1], markersize=30, marker="x", color='m', mew=5)
-    plt.show()
+    #plt.show()
 
 
 def choose_random_centroids(samples, n_clusters):
