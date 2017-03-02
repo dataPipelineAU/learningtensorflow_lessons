@@ -30,6 +30,6 @@ def test_convergence_one():
         print("Predicted model: {a:.3f}x + {b:.3f}".format(a=w_value[0], b=w_value[1]))
 
     import matplotlib.pyplot as plt
-    plt.plot([np.mean(errors[i-50:i]) for i in range(len(errors))])
+    #plt.plot([np.mean(errors[i-50:i]) for i in range(len(errors))])
     #plt.show()
-    plt.savefig("errors.png")
+    #plt.savefig("errors.png")

@@ -22,7 +22,7 @@ def test_array_four():
         result = session.run(x)
 
     print(result.shape)
-    plt.imshow(result)
+    #plt.imshow(result)
     #plt.show()
 
     print("four")

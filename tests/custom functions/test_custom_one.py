@@ -11,8 +11,8 @@ def test_custom_one():
     with tf.Session() as session:
         X = session.run(initial_board)
 
-    fig = plt.figure()
-    plot = plt.imshow(X, cmap='Greys',  interpolation='nearest')
+    #fig = plt.figure()
+    #plot = plt.imshow(X, cmap='Greys',  interpolation='nearest')
     #plt.show()
 
 

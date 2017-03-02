@@ -20,7 +20,7 @@ def test_array_three():
     result = session.run(x)
 
 
-    plt.imshow(result)
+    #plt.imshow(result)
     #plt.show()
 
     print("three")

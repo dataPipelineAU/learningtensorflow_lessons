@@ -5,9 +5,9 @@ from sklearn.model_selection import train_test_split
 
 digits = load_digits()
 
-fig = plt.figure(figsize=(3, 3))
+#fig = plt.figure(figsize=(3, 3))
 
-plt.imshow(digits['images'][66], cmap="gray", interpolation='none')
+#plt.imshow(digits['images'][66], cmap="gray", interpolation='none')
 
 #plt.show()
 

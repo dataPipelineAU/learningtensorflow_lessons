@@ -17,5 +17,5 @@ def test_placeholder_two():
         result = session.run(slice, feed_dict={image: raw_image_data})
         print(result.shape)
 
-    plt.imshow(result)
+    #plt.imshow(result)
     #plt.show()

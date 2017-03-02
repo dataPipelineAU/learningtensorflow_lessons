@@ -11,7 +11,7 @@ def test_array_two():
     # Print out its shape
     print(image.shape)
 
-    plt.imshow(image)
+    #plt.imshow(image)
     #plt.show()
 
     print("two")
