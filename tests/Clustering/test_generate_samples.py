@@ -20,11 +20,12 @@ def create_samples(n_clusters, n_samples_per_cluster, n_features, embiggen_facto
     return centroids, samples
 
 
-def plot_clusters(all_samples, centroids, n_samples_per_cluster):
+def plot_clusters(all_samples,centroids,n_samples_per_cluster):
     import matplotlib.pyplot as plt
     # Plot out the different clusters
     # Choose a different colour for each cluster
     #colour = plt.cm.rainbow(np.linspace(0,1,len(centroids)))
+
     for i, centroid in enumerate(centroids):
         # Grab just the samples fpr the given cluster and plot them out with a new colour
         samples = all_samples[i*n_samples_per_cluster:(i+1)*n_samples_per_cluster]
