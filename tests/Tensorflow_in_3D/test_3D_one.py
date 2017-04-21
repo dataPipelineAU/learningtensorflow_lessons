@@ -36,8 +36,7 @@ def create_cube(bottom_lower=(0, 0, 0), side_length=5):
     
 cube_1 = create_cube(side_length=2)
 ​
-​
-plot_basic_object(cube_1)
+
 
 Figure 1
 x=-1.24144 , y=8.76694 , z=-7.12935
@@ -60,7 +59,6 @@ with tf.Session() as session:
     translated_cube = session.run(translate_op)
 
 
-plot_basic_object(translated_cube)
 
 Figure 2
 x=4.26205 , y=1.58246 , z=-4.34219
@@ -78,4 +76,3 @@ with tf.Session() as session:
     result = session.run(rotate_around_z(cube_1, 75))
 
 
-plot_basic_object(result)
