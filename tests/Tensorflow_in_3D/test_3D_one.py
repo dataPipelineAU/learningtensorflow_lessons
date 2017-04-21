@@ -17,3 +17,65 @@ def plot_basic_object(points):
     ax.set_zlim3d(-5, 5)
 
 
+import numpy as np
+def create_cube(bottom_lower=(0, 0, 0), side_length=5):
+    """Creates a cube starting from the given bottom-lower point (lowest x, y, z values)"""
+    bottom_lower = np.array(bottom_lower)
+    points = np.vstack([
+        bottom_lower,
+        bottom_lower + [0, side_length, 0],
+        bottom_lower + [side_length, side_length, 0],
+        bottom_lower + [side_length, 0, 0],
+        bottom_lower + [0, 0, side_length],
+        bottom_lower + [0, side_length, side_length],
+        bottom_lower + [side_length, side_length, side_length],
+        bottom_lower + [side_length, 0, side_length],
+        bottom_lower,
+    ])
+    return points
+    
+cube_1 = create_cube(side_length=2)
+​
+​
+plot_basic_object(cube_1)
+
+Figure 1
+x=-1.24144 , y=8.76694 , z=-7.12935
+
+import tensorflow as tf
+
+def translate(points, amount):
+    return tf.add(points, amount)
+
+
+points = tf.constant(cube_1, dtype=tf.float32)
+​
+# Update the values here to move the cube around.
+translation_amount = tf.constant([3, -3, 0], dtype=tf.float32)
+
+
+translate_op = translate(points, translation_amount)
+​
+with tf.Session() as session:
+    translated_cube = session.run(translate_op)
+
+
+plot_basic_object(translated_cube)
+
+Figure 2
+x=4.26205 , y=1.58246 , z=-4.34219
+
+
+def rotate_around_z(points, theta):
+    theta = float(theta)
+    rotation_matrix = tf.stack([[tf.cos(theta), tf.sin(theta), 0],
+                                   [-tf.sin(theta), tf.cos(theta), 0],
+                                   [0, 0, 1]])
+    return tf.matmul(tf.to_float(points), tf.to_float(rotation_matrix))
+
+
+with tf.Session() as session:
+    result = session.run(rotate_around_z(cube_1, 75))
+
+
+plot_basic_object(result)
