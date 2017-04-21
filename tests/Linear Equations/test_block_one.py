@@ -11,7 +11,7 @@ y2 = tf.constant(1, dtype=tf.float32)
 point2 = tf.stack([x2, y2])
 
 # Combine points into an array
-X = tf.transpose(tf.pack([point1, point2]))
+X = tf.transpose(tf.stack([point1, point2]))
 
 B = tf.constant([[9, 3]], dtype=tf.float32)
 

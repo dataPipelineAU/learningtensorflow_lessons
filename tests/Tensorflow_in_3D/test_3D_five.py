@@ -1,3 +1,5 @@
+import tensorflow as tf
+
 def rotate_around_z(points, theta):
     theta = float(theta)
     rotation_matrix = tf.stack([[tf.cos(theta), tf.sin(theta), 0],
