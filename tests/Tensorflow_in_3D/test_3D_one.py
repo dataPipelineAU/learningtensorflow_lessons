@@ -3,7 +3,8 @@ import numpy as np
 from matplotlib import cm
 import matplotlib.pyplot as plt
 from scipy.spatial import Delaunay
-​
+
+
 def plot_basic_object(points):
     """Plots a basic object, assuming its convex and not too complex"""
     tri = Delaunay(points).convex_hull
@@ -15,6 +16,9 @@ def plot_basic_object(points):
     ax.set_xlim3d(-5, 5)
     ax.set_ylim3d(-5, 5)
     ax.set_zlim3d(-5, 5)
+
+    plt.show()
+
 
 
 import numpy as np
@@ -33,13 +37,11 @@ def create_cube(bottom_lower=(0, 0, 0), side_length=5):
         bottom_lower,
     ])
     return points
-    
+
+
 cube_1 = create_cube(side_length=2)
-​
 
-
-Figure 1
-x=-1.24144 , y=8.76694 , z=-7.12935
+plot_basic_object(cube_1)
 
 import tensorflow as tf
 
@@ -48,21 +50,18 @@ def translate(points, amount):
 
 
 points = tf.constant(cube_1, dtype=tf.float32)
-​
+
 # Update the values here to move the cube around.
 translation_amount = tf.constant([3, -3, 0], dtype=tf.float32)
 
 
 translate_op = translate(points, translation_amount)
-​
+
 with tf.Session() as session:
     translated_cube = session.run(translate_op)
 
 
-
-Figure 2
-x=4.26205 , y=1.58246 , z=-4.34219
-
+plot_basic_object(translated_cube)
 
 def rotate_around_z(points, theta):
     theta = float(theta)
@@ -76,3 +75,4 @@ with tf.Session() as session:
     result = session.run(rotate_around_z(cube_1, 75))
 
 
+plot_basic_object(result)
