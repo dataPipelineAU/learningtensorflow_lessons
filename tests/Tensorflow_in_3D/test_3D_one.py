@@ -3,6 +3,9 @@ import numpy as np
 from matplotlib import cm
 import matplotlib.pyplot as plt
 from scipy.spatial import Delaunay
+import re
+
+re.sub('[^\w\-_\. ]', '_', filename)
 
 
 def plot_basic_object(points):
